@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateCar";
+}
+@using GC_CodeFirstDBLab.Context
+@model Car
+<h1>Update Car</h1>
+
+<form action="/Car/UpdateCar" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="Make" value="@Model.Make" />
+    <input type="text" name="Model" value="@Model.Model" />
+    <input type="number" name="Year" value="@Model.Year" />
+    <input type="text" name="Type" value="@Model.Type" />
+    @if (Model.Transmission)
+    {
+        <p>Change to Automatic Transmission</p><input type="checkbox" name="Transmission" value="false" />
+    }
+    else
+    {
+        <p>Change to Manual Transmission</p><input type="checkbox" name="Transmission" value="true" />
+    }
+    <input type="submit" value="Save Changes" />
+
+
+</form>

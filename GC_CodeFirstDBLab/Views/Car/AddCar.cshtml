@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "AddCar";
+}
+
+<h1>Add Car</h1>
+
+<form action="/Car/AddCar" method="post" class="form-control">
+    
+    <input type="text" name="Make" value="Make" />
+    <input type="text" name="Model" value="Model" />
+    <input type="number" name="Year" value="Year" />
+    <input type="text" name="Type" value="Style" />
+    <p>Manual Transmission: <input type="radio" name="Transmission" group="Trans" value="true" /></p>
+    <p>Automatic Transmission: <input type="radio" name="Transmission" group="Trans" value="false" /></p>
+    <input type="submit" value="Add This Car"/>
+
+</form>
+

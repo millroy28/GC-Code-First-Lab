@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@using GC_CodeFirstDBLab.Context
+@model IEnumerable<Car>
+
+
+<h1>Index</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Style</th>
+        <th>Transmission</th>
+    </tr>
+@foreach (Car car in Model)
+{
+    <tr>
+        <td>@car.Id</td>
+        <td>@car.Make</td>
+        <td>@car.Model</td> 
+        <td>@car.Year</td>
+        <td>@car.Type</td>
+        @if (car.Transmission)
+        {
+            <td>Manual</td>
+        }
+        else
+        {
+            <td>Automatic</td>
+        }
+        <td><a href="/Car/UpdateCar?id=@car.Id">Modify Car</a></td>
+        <td><a href="/Car/DeleteCar?id=@car.Id">Delete Car</a></td>
+    </tr>    
+}
+</table>
+<a href="/Car/AddCar">Add a Car</a>
+
+
